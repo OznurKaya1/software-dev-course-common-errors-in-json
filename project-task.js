@@ -1,86 +1,28 @@
-/*
-===========================================
-🏨 JSON Syntax Debugging: Hotel Booking Data
-===========================================
 
-🎯 Objective:
-Students will analyze a JSON file containing multiple syntax errors,
-identify the issues, and correct them.
-
-This activity helps practice spotting and fixing common JSON mistakes such as:
-- Missing commas
-- Incorrect use of quotation marks
-- Unmatched brackets/braces
-- Trailing commas
-- Invalid data types
-*/
-
-
-// ============================================
-// 🧭 Instructions:
-// ============================================
-
-/*
-📘 Scenario:
-You’re a developer on a team building a travel booking API.
-
-A teammate submitted a JSON file to represent a hotel booking, 
-but it contains multiple syntax errors that prevent it from being parsed.
-
-🔧 Your Task:
-1️⃣ Review the provided JSON file
-2️⃣ Identify all syntax errors
-3️⃣ Write down what each error is and why it causes a problem
-4️⃣ Correct the JSON structure so that it is valid
-5️⃣ Validate your corrected version using a JSON linter or validator
-
-🧪 Deliverables:
-- A corrected version of the JSON
-- A list of the corrections made and why each was necessary
-*/
-
-
-// ============================================
-// 🔍 Provided JSON File with Errors
-// ============================================
-
-const invalidBookingJSON = `
 {
   "hotelName": "Grand City Hotel",
-  "checkInDate": "2024-05-15"
+  "checkInDate": "2024-05-15", //Comma needed
   "checkOutDate": "2024-05-20",
   "guests": [
     {
-      name: "Alice Johnson",
+      "name": "Alice Johnson", //qutation mark needed
       "age": 30,
       "email": "alice.johnson@example.com"
     },
     {
       "name": "Bob Smith",
-      "age": undefined,
+      "age": null, // we can't use "undefined" on JSON. It will result in invalid JSON, instead we use "null"
       "email": "bob.smith@example"
     }
   ],
   "roomDetails": {
     "type": "Suite",
     "pricePerNight": 200,
-    "amenities": ["WiFi", "Breakfast", "Parking",]
+    "amenities": ["WiFi", "Breakfast", "Parking"]// no need to use comma after "Parking" at the end of the array.
   }
 }
-`;
 
 
-// ============================================
-// ✅ Requirements
-// ============================================
-
-/*
-- Use a JSON validator or linter (e.g., https://jsonlint.com/) to test your final version
-- Keep track of each fix:
-  • What was wrong?
-  • Why is it a problem in JSON?
-  • What did you change to fix it?
-*/
 
 
 // ============================================
@@ -92,10 +34,22 @@ const invalidBookingJSON = `
 
 1️⃣ What tools or techniques did you use to identify the errors?
 
+I used VS Code’s error highlighting feature, which automatically shows syntax mistakes in real time.
+
 2️⃣ How did you confirm that your corrected JSON file was valid?
+
+After fixing the issues, the red highlights in VS Code disappeared.I also verified the JSON using 
+Code Beautify’s JSON Validator, which confirmed that it was valid.
 
 3️⃣ Which errors were the most difficult to spot? Why?
 
+Most of the errors were easy to identify, but trailing commas or misplaced brackets can be trickier to notice 
+because they are small and don’t always stand out visually.
+
 4️⃣ What strategies can help you avoid these kinds of errors in the future?
-   (e.g., syntax highlighting, linters, writing JSON by example)
+
+I plan to continue using syntax highlighting in VS Code and online JSON validators like Code Beautify to quickly
+catch and fix errors before saving my file.
+
+
 */
